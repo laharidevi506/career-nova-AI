@@ -1,3 +1,3 @@
 # career-nova-AI
 My info
-This is about my project websitr
+This is about my project website
