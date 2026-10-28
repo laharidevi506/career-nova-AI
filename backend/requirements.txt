@@ -10,3 +10,5 @@ email-validator
 python-multipart
 PyMuPDF
 python-docx
+pwdlib[argon2]
+
