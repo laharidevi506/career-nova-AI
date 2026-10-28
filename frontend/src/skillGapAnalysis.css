@@ -1,0 +1,60 @@
+.skill-report {
+  margin-top: 30px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e9e2f8;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(72, 45, 120, 0.06);
+}
+
+.skill-report h2 {
+  margin: 24px 0 12px;
+  color: #35205f;
+}
+
+.skill-report h2:first-child {
+  margin-top: 0;
+}
+
+.skill-report p,
+.skill-report li {
+  line-height: 1.7;
+  color: #514b60;
+}
+
+.skill-report-card {
+  margin: 14px 0;
+  padding: 20px;
+  border: 1px solid #e8e0f5;
+  border-radius: 14px;
+  background: #faf8ff;
+}
+
+.skill-report-card h3 {
+  margin-top: 0;
+  color: #5b36a5;
+}
+
+.skill-report-card p {
+  margin: 8px 0;
+}
+
+.skill-report ul,
+.skill-report ol {
+  padding-left: 24px;
+}
+
+.skill-report .career-submit-button {
+  margin-top: 24px;
+}
+
+.career-field select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ded6ec;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #35205f;
+  font: inherit;
+}
+
