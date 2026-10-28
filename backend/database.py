@@ -1,36 +1,33 @@
+import os
+from urllib.parse import quote_plus
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-# MySQL database connection details
-
-DB_USER = "root"
-DB_PASSWORD = ""
-DB_HOST = "localhost"
-DB_PORT = "3306"
-DB_NAME = "career_nova_ai"
-
-# Database connection URL
+DB_USER = os.environ["DB_USER"]
+DB_PASSWORD = quote_plus(os.environ["DB_PASSWORD"])
+DB_HOST = os.environ["DB_HOST"]
+DB_PORT = os.environ["DB_PORT"]
+DB_NAME = os.environ["DB_NAME"]
 
 DATABASE_URL = (
-f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}"
-f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}"
+    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
-# Create database engine
+connect_args = {"ssl": {"check_hostname": True}}
 
 engine = create_engine(
-DATABASE_URL,
-echo=True
+    DATABASE_URL,
+    connect_args=connect_args,
+    pool_pre_ping=True,
 )
-
-# Create database sessions
 
 SessionLocal = sessionmaker(
-autocommit=False,
-autoflush=False,
-bind=engine
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
 )
 
-# Base class for database models
-
 Base = declarative_base()
+
