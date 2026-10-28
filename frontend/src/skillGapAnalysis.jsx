@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./SkillGapAnalysis.css";
+import "./skillGapAnalysis.css";
 
 function SkillGapAnalysis({ user, onBack }) {
   const [currentSkills, setCurrentSkills] = useState(

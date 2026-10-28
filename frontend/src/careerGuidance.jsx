@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./CareerGuidance.css";
+import "./careerGuidance.css";
 
 function CareerGuidance({ user, onBack }) {
   const [education, setEducation] = useState(

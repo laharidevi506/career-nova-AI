@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./PlacementPreparation.css";
+import "./placementPreparation.css";
 
 function PlacementPreparation({ onBack }) {
   const [form, setForm] = useState({
