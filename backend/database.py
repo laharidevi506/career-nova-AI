@@ -4,7 +4,7 @@ from urllib.parse import quote_plus
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-DB_USER = os.environ["DB_USER"]
+DB_USER = quote_plus(os.environ["DB_USER"])
 DB_PASSWORD = quote_plus(os.environ["DB_PASSWORD"])
 DB_HOST = os.environ["DB_HOST"]
 DB_PORT = os.environ["DB_PORT"]
@@ -15,11 +15,9 @@ DATABASE_URL = (
     f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
-connect_args = {"ssl": {"check_hostname": True}}
-
 engine = create_engine(
     DATABASE_URL,
-    connect_args=connect_args,
+    connect_args={"ssl": {}},
     pool_pre_ping=True,
 )
 
@@ -30,4 +28,3 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
-
