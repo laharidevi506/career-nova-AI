@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./placementPreparation.css";
-
+const API_URL = "https://career-nova-ai-backend.onrender.com";
 function PlacementPreparation({ onBack }) {
   const [form, setForm] = useState({
     target_role: "Full Stack Developer",
@@ -27,7 +27,7 @@ function PlacementPreparation({ onBack }) {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/placement-preparation",
+       `${API_URL}/placement-preparation`,
         form
       );
 

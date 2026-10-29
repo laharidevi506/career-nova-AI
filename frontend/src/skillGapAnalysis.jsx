@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./skillGapAnalysis.css";
-
+const API_URL = "https://career-nova-ai-backend.onrender.com";
 function SkillGapAnalysis({ user, onBack }) {
   const [currentSkills, setCurrentSkills] = useState(
     user?.skills || ""
@@ -25,15 +25,14 @@ function SkillGapAnalysis({ user, onBack }) {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/skill-gap-analysis",
-        {
-          current_skills: currentSkills,
-          target_career: targetCareer,
-          education,
-          experience_level: experience,
-        }
-      );
-
+  `${API_URL}/skill-gap-analysis`,
+  {
+    current_skills: currentSkills,
+    target_career: targetCareer,
+    education,
+    experience_level: experience,
+  }
+);
       setAnalysis(response.data);
     } catch (err) {
       console.error("Skill Gap Analysis Error:", err);

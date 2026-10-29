@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./PersonalizedRoadmap.css";
-
+const API_URL = "https://career-nova-ai-backend.onrender.com";
 function PersonalizedRoadmap({ user, onBack }) {
   const [form, setForm] = useState({
     target_career: "",
@@ -33,7 +33,7 @@ function PersonalizedRoadmap({ user, onBack }) {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/personalized-roadmap",
+        `${API_URL}/personalized-roadmap`,
         form
       );
 

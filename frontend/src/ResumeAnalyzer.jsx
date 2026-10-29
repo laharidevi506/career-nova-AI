@@ -44,12 +44,12 @@ function ResumeAnalyzer({ onBack }) {
       formData.append("target_role", targetRole.trim());
 
       const response = await fetch(
-        "http://127.0.0.1:8000/resume-analyzer",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+  "https://career-nova-ai-backend.onrender.com/resume-analyzer",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
       const data = await response.json();
 

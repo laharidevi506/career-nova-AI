@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./Chatbot.css";
 
-const API_BASE = "http://127.0.0.1:8000";
-
+const API_URL = "https://career-nova-ai-backend.onrender.com";
 const initialMessage = {
   role: "assistant",
   content:

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ProgressTracking.css";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://career-nova-ai-backend.onrender.com";
 
 function ProgressTracking({ onBack }) {
   const [tasks, setTasks] = useState([]);

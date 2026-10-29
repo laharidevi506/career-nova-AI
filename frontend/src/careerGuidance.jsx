@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./careerGuidance.css";
-
+const API_URL = "https://career-nova-ai-backend.onrender.com";
 function CareerGuidance({ user, onBack }) {
   const [education, setEducation] = useState(
     user?.education || "BTech CSE"
@@ -33,7 +33,7 @@ function CareerGuidance({ user, onBack }) {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/career-guidance",
+        `${API_URL}/career-guidance`,
         {
           education,
           interests,
