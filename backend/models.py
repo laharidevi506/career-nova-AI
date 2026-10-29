@@ -10,7 +10,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.sql import func
 from database import Base
-
+from datetime import date
 
 # =========================================================
 # USER MODEL
@@ -85,10 +85,10 @@ class LearningProgress(Base):
     )
 
     study_date = Column(
-        Date,
-        nullable=False,
-        server_default=func.current_date()
-    )
+    Date,
+    nullable=False,
+    default=date.today
+)
 
     created_at = Column(
         DateTime(timezone=True),
